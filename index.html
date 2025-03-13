@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <link rel="stylesheet" href="./style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ТЕЛЕФОНИ</title>
+    <link rel="stylesheet" href="./style.css">
+    <meta property="og:title" content="Заголовок страницы в OG">
+    <meta property="og:description" content="Описание страницы в OG">
+    <meta property="og:image" content="https://example.com/image.jpg">
+    <meta property="og:url" content="https://example.com/">
+</head>
+<body class="dark">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Эта страница</a></li>
+                <li><a href="catalog.html">Другая страница</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <section>
+                <h2>Первая секция</h2>
+                <p>Она обо телефонах</p>
+                <img src="images/image.png" alt="Человек и пароход">
+                <p>редми</p>
+                <img src="https://mi-home.ro/cdn/shop/files/13995_Redmi_Note_13-black-1-1600px.png?v=1705925328&width=1946" alt="Redmi Note 13">
+            </section>
+            <section>
+                <h2>Вторая секция</h2>
+                <p>нокиа</p>
+                <img src="https://rarephones.ru/image/cache/catalog/products/nokia/nokia3310/nokia3310-800x800.jpg" alt="Nokia 3310">
+            </section>
+            <section>
+                <h2>И третья</h2>
+                <p>самсунг</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBy2fUFH9RAB-d4_ACsgDLQtxzTNb6s9u2BA&s" alt="Samsung">
+            </section>
+        </article>
+    </main>
+    <footer></footer>
+
+    
+    <button id="theme-toggle">Toggle Light / Dark</button>
+    <button class="button">
+        <div class="inside-button">
+            <span class="unadded"></span>
+        </div>
+    </button>
+    
+    <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Home</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Profile</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Contact</button>
+        </li>
+    </ul>
+
+    <button id="back-button" onclick="goBack()">Назад</button>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
