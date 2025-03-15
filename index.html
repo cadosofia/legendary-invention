@@ -1,79 +1,247 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <link rel="stylesheet" href="./style.css">
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ТЕЛЕФОНИ</title>
-    <link rel="stylesheet" href="./style.css">
-    <meta property="og:title" content="Заголовок страницы в OG">
-    <meta property="og:description" content="Описание страницы в OG">
-    <meta property="og:image" content="https://example.com/image.jpg">
-    <meta property="og:url" content="https://example.com/">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Магазин мобильных телефонов</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --main-color: #00aaff;
+            --accent-color: #ff77ff;
+            --text-color: #333;
+            --background-color: #fff;
+            --hover-color: #ff3385;
+        }
+
+        /* Общие стили для всей страницы */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(45deg, var(--main-color), var(--accent-color));
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            color: var(--text-color);
+        }
+
+        /* Анимация фона */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--hover-color);
+        }
+
+        section {
+            padding: 50px 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            text-align: center;
+            color: var(--main-color);
+        }
+
+        .phone-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .phone-item {
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .phone-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .phone-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .phone-item button {
+            background-color: var(--main-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .phone-item button:hover {
+            background-color: var(--hover-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .phone-list {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
-<body class="dark">
+<body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Эта страница</a></li>
-                <li><a href="catalog.html">Другая страница</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <article>
-            <section>
-                <h2>Первая секция</h2>
-                <p>Она обо телефонах</p>
-                <img src="images/image.png" alt="Человек и пароход">
-                <p>редми</p>
-                <img src="https://mi-home.ro/cdn/shop/files/13995_Redmi_Note_13-black-1-1600px.png?v=1705925328&width=1946" alt="Redmi Note 13">
-            </section>
-            <section>
-                <h2>Вторая секция</h2>
-                <p>нокиа</p>
-                <img src="https://rarephones.ru/image/cache/catalog/products/nokia/nokia3310/nokia3310-800x800.jpg" alt="Nokia 3310">
-            </section>
-            <section>
-                <h2>И третья</h2>
-                <p>самсунг</p>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBy2fUFH9RAB-d4_ACsgDLQtxzTNb6s9u2BA&s" alt="Samsung">
-            </section>
-        </article>
-    </main>
-    <footer></footer>
-
-    
-    <button id="theme-toggle">Toggle Light / Dark</button>
-    <button class="button">
-        <div class="inside-button">
-            <span class="unadded"></span>
+        <div class="container">
+            <h1>Магазин мобильных телефонов</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#phones">Телефоны</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
         </div>
-    </button>
-    
-    <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Home</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Profile</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Contact</button>
-        </li>
-    </ul>
+    </header>
 
-    <button id="back-button" onclick="goBack()">Назад</button>
+    <!-- Главная секция -->
+    <section id="home">
+        <div class="container">
+            <h2>Добро пожаловать в наш магазин!</h2>
+            <h3>Мы предлагаем широкий выбор мобильных телефонов с доставкой по всей стране.</h3>
+        </div>
+    </section>
+
+    <!-- Секция с телефонами -->
+    <section id="phones">
+        <div class="container">
+            <h2>Наши телефоны</h2>
+            <div class="phone-list">
+                <div class="phone-item">
+                    <img src="https://www.mobicom.ru/upload/iblock/8bf/le1mf3af7e813oz5bq1hyhy7vbmnvfte.jpeg" alt="Телефон 1">
+                    <h3>Телефон епл</h3>
+                    <p>Цена: 20 000 грн.</p>
+                    <button>Добавить в корзину</button>
+                </div>
+                <div class="phone-item">
+                    <img src="https://xiaomi-sib.ru/media/product_variant_image/730//c9569798583756bf129488c0fb59967aecb28121.jpg" alt="Телефон 2">
+                    <h3>Телефон ксяоми</h3>
+                    <p>Цена: 30 000 грн.</p>
+                    <button>Добавить в корзину</button>
+                </div>
+                <div class="phone-item">
+                    <img src="https://p1.akcdn.net/full/935308818.xiaomi-12-pro-5g-256gb-12gb-ram-dual.jpg" alt="Телефон 3">
+                    <h3>Телефон ксяоми 12про</h3>
+                    <p>Цена: 25 000 грн.</p>
+                    <button>Добавить в корзину</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О нас -->
+    <section id="about">
+        <div class="container">
+            <h2>О нас</h2>
+            <h3>Мы - команда профессионалов, которая занимается продажей мобильных телефонов с 2025 года. Наша цель - предоставить вам качественные товары по доступным ценам.</h3>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contact">
+        <div class="container">
+            <h2>Контакты</h2>
+            <form>
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Ваш email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Сообщение:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <p>&copy; 2025 Магазин мобильных телефонов. Все права защищены.</p>
+    </footer>
 
     <script>
-        function goBack() {
-            window.history.back();
-        }
+        document.querySelectorAll('.phone-item button').forEach(button => {
+            button.addEventListener('click', () => alert('Товар добавлен в корзину!'));
+        });
     </script>
 </body>
 </html>
-
-
-
-
-
